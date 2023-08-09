@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cine.css">
+    <title>Cine</title>
+</head>
+<body>
+    <h1>¡Bienvenidos al cine!</h1><br>
+    <h3>----menu----</h3><br>
+    <p>Queremos hacer de tu visita una experiencia mas placentera</p><br>
+    <p class="edad">Edad: <input type="number" id="edad"></p><br>
+    <div class="recomendaciones">
+        <button class="center" onclick="recomendar('drama')">Drama</button>
+        <button class="center" onclick="recomendar('comedia')">Comedi</button>
+        <button class="center" onclick="recomendar('Musical')">Musical</button>
+        <button class="center" onclick="recomendar('crimen')">Crimen</button>
+    </div><br>
+    <h3>Nuestra recomendación:</h3>
+    <h2 id="recomendada"></h2></h2>
+
+    <script src="cine.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body{
+    background-color: beige;
+}
+
+.principal{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#informacion{
+    text-align: center;
+}
+
+/* poner atributos a los elementos href individuales */
+a[href*=".edu"]{
+    background-color: gold;
+}
+
+/*seudo clase*/
+h1:hover{
+    color: red;
+}
+
+.principal::first-line{
+    background-color: lightgrey;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresos de Usuario</title>
+</head>
+<body>
+    <p>Ingresa tu nombre</p>
+    <input type="text" id="nombreDeUsuario">
+    <button onclick="mostrarNombre()">Ingresar</button>
+    <h1 id="salida">Nose tu nombre</h1>
+
+
+    <script>
+        function mostrarNombre(){
+            // primero creamos una variable que almacene lo que el usuario ingrese en elemento input
+            // que tiene el id='nombreUsuario'
+            let elementoNombre = document.getElementById("nombreDeUsuario");
+
+            // creamos otra variable para capturar el elemento h1 para luego poder cambiar su contenido
+            let elementoTexto = document.getElementById("salida");
+
+            // creamos la variable a la cual le asignamos el mensaje que vamos a cambiar con textContent
+            let mensaje = "Tu te llamas " + elementoNombre.value;
+
+            // ahora hacemos que cambie el contenido del segundo elemento que es el h1 y que se le coloque
+            // lo que tenemos en el elementNombre
+            //para eso vamos a llamar al elementoTexto y le aplicamos un cambio con 
+            // la propiedad textContent que luego le asignamos el texto que queramos
+            elementoTexto.textContent = mensaje
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+div p{
+    color: green;
+}
+
+/* Hijos directos*/
+
+ol > li{
+    font-weight: bolder;
+}
+
+/* hermanos adyasentes */
+h2 ~ h3{
+    background-color: lightskyblue;
+}
+div p:hover{
+    background-color: gold;
+}

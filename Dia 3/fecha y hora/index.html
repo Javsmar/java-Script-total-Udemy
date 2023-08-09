@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="misEstilos.css">
+    <title>Temporizador</title>
+</head>
+<body onload="comenzarReloj()">
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma">00:00:00</h1>
+
+    <audio id="audioAlarma">
+        <source src="Audios/alarma.mp3" type="audio/mpeg">
+        <source src="Audios/alarma.ogv" type="audio/ogg">
+        Sonido no habilatado
+    </audio>
+
+    <script>
+        let elementSecons = document.getElementById("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById("textoAlarma");
+        let elementSoundAlarm = document.getElementById("audioAlarma");
+
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000*elementSecons.value);
+        }
+
+        function tiempoCumplido(){
+            elementoTextoAlarma.style.color = "green";
+            elementSoundAlarm.play();
+        }
+
+        function comenzarReloj(){
+            setInterval(tictac,1000);
+        }
+
+        function tictac(){
+            let tiempoActual = new Date();
+            let hora = tiempoActual.getHours();
+            let minutos = tiempoActual.getMinutes();
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,"0");// esta linea hace que los segundos 
+                                                                            //aparescan con dos digitos
+
+            let textHora = hora + ":" + minutos + ":" + segundos;
+            elementoTextoAlarma.textContent = textHora;
+        }
+    </script>
+</body>
+</html>

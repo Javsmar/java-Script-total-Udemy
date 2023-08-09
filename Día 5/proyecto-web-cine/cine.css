@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+body{
+    background-color: bisque;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+.edad input{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+p{
+    text-align: center;
+}
+.edad{
+    text-align: center;
+}
+
+
+.recomendaciones{
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.center{
+    width: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}

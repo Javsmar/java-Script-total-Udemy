@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones</title>
+</head>
+<body onload="listaNotas()">
+
+    <div class="logo">
+        <h1>Boletin calificaciones</h1>
+    </div>
+
+    <div class="estudiante">
+        <h2>Alumno Mariana Del Pilar Espinosa Lis</h2>
+    </div>
+
+    <h3>Notas:</h3>
+    <ul id="listaNotas">
+
+    </ul>
+
+    <div class="info">
+        <h4>promedio: <span id="promedio"></span></h4>
+        <button onclick="calcularPromedio()">Promedio</button>
+
+        <h4>Nota Mas Alta: <span id="nota"></span></h4>
+        <button onclick="notaMasAlta()">Nota Mayor</button>
+
+        <h4>Aplazados: <span id="aplazado"></span></h4>
+        <button onclick="aplazo()">Consulta Aplazado</button>
+    </div>
+
+
+
+
+
+    <script src="proyecto.js"></script>
+</body>
+</html>
