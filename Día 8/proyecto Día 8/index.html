@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+</head>
+<body>
+    <h1>Registro de Empleados</h1>
+    <p>legajo</p>
+    <input type="text" id="legajo">
+
+    <p>Nombre</p>
+    <input type="text" id="nombre">
+
+    <p>Apellido</p>
+    <input type="text" id="apellido">
+
+    <p>Fecha Nacimiento</p>
+    <input type="date" id="fechaNacimiento">
+
+    <p>Cargo</p>
+    <input type="text" id="cargo">
+
+    <br><br>
+    <button onclick="cargarEmpleado()">Cargar Empleado</button>
+    <br><br>
+    <button onclick="mostrarEmpleado()">Mostrar Empleado</button>
+
+    <h2 id="listadoEmple"></h2>
+    <script src="proyect.js"></script>
+</body>
+</html>

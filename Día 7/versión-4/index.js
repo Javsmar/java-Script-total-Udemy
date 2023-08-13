@@ -41,8 +41,7 @@ function crearParrafoTienda(textLabel, valorMin){
 
 
 function extraerNumerodesdeElemento(elemento){
-    let miElemento = document.getElementById(elemento);
-    let miTexto = miElemento.value;
+    let miTexto = elemento.value;
     let miNumero = Number(miTexto);
     return miNumero;
 
@@ -51,21 +50,37 @@ function extraerNumerodesdeElemento(elemento){
 
 function calcular(){
     let ventas = [];
-    ventas[0] = extraerNumerodesdeElemento("ventasTienda1");
-    ventas[1] = extraerNumerodesdeElemento("ventasTienda2");
-    ventas[2] = extraerNumerodesdeElemento("ventasTienda3");
-    ventas[3] = extraerNumerodesdeElemento("ventasTienda4");
-    ventas[4] = extraerNumerodesdeElemento("ventasTienda5");
-    ventas[5] = extraerNumerodesdeElemento("ventasTienda6");
+    let positionVentas = 0;
+    let elementosVentas = document.getElementById('itemsTiendas');
+
+    for(let item of elementosVentas.children){
+        let valorVenta = extraerNumerodesdeElemento(item.children[1]);
+        ventas[positionVentas] = valorVenta;
+        positionVentas = positionVentas + 1;
+        
+    }
+
 
     let totalVentas = sumarTotal(ventas);
     let ventaMayor = calcularMayor(ventas)
     let ventaMenor = calcularMenor(ventas)
+    
+    //loop para cambiar el color de las ventas mayores y menores
+    for(let item of elementosVentas.children){
+        let valorVenta = extraerNumerodesdeElemento(item.children[1]);
+
+        item.children[1].className = 'menuNeutro';
+
+        if(valorVenta == ventaMayor){
+            item.children[1].className = 'menuInputMayor';
+        }
+        if(valorVenta == ventaMenor){
+            item.children[1].className = 'menuInputMenor';
+        }
+    }
 
 
-    let mensajeSalida = 'Total Ventas: ' + totalVentas +
-                        ' / Venta mayor:' + ventaMayor + 
-                        ' / venta Menor:' + ventaMenor;
+    let mensajeSalida = 'Total Ventas: ' + totalVentas;
     let elementoSalida = document.getElementById('parrafoSalida');
     elementoSalida.textContent = mensajeSalida;
 
@@ -102,3 +117,4 @@ function calcularMenor(array){
     return menor;
 
 }
+
