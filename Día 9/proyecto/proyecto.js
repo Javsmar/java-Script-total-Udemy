@@ -29,7 +29,7 @@ function verRegistros(){
     let lista = document.getElementById('listRegisters');
     for(let automovil of automoviles){
         let item = document.createElement('li');
-        item.innerText = automovil.verAuto();
+        item.innerText = automovil.verAuto().toLocaleUpperCase();
         lista.appendChild(item);
     }
 }
