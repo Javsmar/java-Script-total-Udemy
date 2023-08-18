@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(122, 4, 4);
+}
+.info{
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+
+#banco {
+    font-size: 2rem;
+}
+
+#sucursal{
+    font-size: 2rem;
+}

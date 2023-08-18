@@ -61,31 +61,75 @@
 // miCuenta.ingresar(200);
 // console.log(`Mi saldo actual es: ${miCuenta.saldo}`);
 
-class Ficha{
-    constructor(nombre, sesiones, numsesiones){
-        this.nombre = nombre;
-        this.sesiones = sesiones;
-        this.numsesiones = numsesiones;
-    }
-    anotar(km){
-        this.sesiones = [];
-        this.numsesiones = 0;
-        this.sesiones[this.numsesiones] = km;
-        this.numsesiones++;
-    }
+// class Ficha{
+//     constructor(nombre, sesiones, numsesiones){
+//         this.nombre = nombre;
+//         this.sesiones = [];
+//         this.numsesiones = 0;
+//     }
+//     anotar(km){
+//         this.sesiones[this.numsesiones] = km;
+//         this.numsesiones++;
+//     }
 
-    media(){
-        let media = 0;
-        for(let i = 0; i < this.sesiones.length; i++){
-            media += this.sesiones[i];
-        }
-        return media/this.numsesiones;
-    }
-}
+//     media(){
+//         let media = 0;
+//         for(let i = 0; i < this.sesiones.length; i++){
+//             media += this.sesiones[i];
+//         }
+//         return media/this.numsesiones;
+//     }
+// }
 
-let newperson = new Ficha('Tomas');
-newperson.anotar(10);
-newperson.anotar(8);
-newperson.anotar(6);
-console.log(`Media de kilometros ${newperson.media()}`)
+// let newperson = new Ficha('Tomas');
+// newperson.anotar(8);
+// newperson.anotar(10);
+// newperson.anotar(6);
+// console.log(`Media de kilometros ${newperson.media()}`)
+
+// class Figura{
+//     constructor(color){
+//         this.color = color;
+//     }
+
+//     obtenerColor(){
+//         return this.color;
+//     }
+// }
+
+// class Rectangulo extends Figura{
+//     constructor(color, altura, ancho){
+//         super(color);
+//         this.ancho = ancho;
+//         this.altura = altura;
+//     }
+//     calcularAreaRectangulo(){
+//         return this.ancho * this.altura;
+//     }
+// }
+
+// class Circulo extends Figura{
+//     constructor(color, radio){
+//         super(color);
+//         this.radio = radio;
+//     }
+//     calcularAreaCirculo(){
+//         return Math.PI * this.radio ** 2
+//     }
+// }
+
+// class Triangulo extends Figura{
+//     constructor(color, base, altura){
+//         super(color);
+//         this.base = base;
+//         this.altura = altura;
+//     }
+//     calcularAreaTriangulo(){
+//         return (this.base * this.altura)/2
+//     }
+// }
+
+// let areaRectangulo = new Rectangulo('rojo', 5, 10);
+
+// console.log(`Area del rectangulo es ${areaRectangulo.calcularAreaRectangulo()}`)
 
