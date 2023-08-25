@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Cotizaciones Online</title>
 </head>
-<body>
+<body onload="cargarContenido()">
 
+    <div id="logo">
+        <img src="logos.png" id ="imgLogo" alt="logo">
+        <h1 id="titulo"></h1>
+    </div>
+    <hr>
+    <div class = "cuadro">
+        <div id = "UsdEur"></div>
+        <div id = "UsdArs"></div>
+        <div id = "BitcoinUsd"></div>
+    </div>
+    <div class="espera">
+        <img id="imgEspera">
+    </div>
 
-    
     <script src="script.js"></script>
 </body>
 </html>
