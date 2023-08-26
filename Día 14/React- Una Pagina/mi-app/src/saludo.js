@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Saludo(props) {
+function Saludo(prop) {
     return (
-        <h1>Hola, {props.nombre}</h1>
+        <h1>Hola, {prop.nombre}</h1>
     )
 }
 
