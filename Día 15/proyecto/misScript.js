@@ -37,7 +37,7 @@ async function consultarUno(){
             alert('No se ha ingresado ningún ID');
             return;
         }
-        axios.get('https://my-json-server.typicode.com/fedegaray/telefonos/dispositivos/' + id )
+        axios.get('https://my-json-server.typicode.com/fedegaray/telefonos/dispositivos/' + _id )
         .then(res => {
             let dispositivo = res.data;
             document.getElementById('consultarNombre').value = dispositivo.marca;
