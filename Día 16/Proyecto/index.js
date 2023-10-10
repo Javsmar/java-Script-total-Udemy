@@ -2,9 +2,8 @@
 
 const express = require('express');
 const app = express();
-
 const mongoDB = require('./conexion');
-
+const { ObjectId } = require('mongodb');
 app.use(express.json());
 
 
@@ -100,6 +99,42 @@ app.get('/notas', (pedido, respuesta) => {
 });
 
 
+//Actulalizar 
+//http://localhost:3000/estudiantes/id/65251dfc3db280fc111ddac7
+app.put('/estudiantes/id/:id', (req, respuesta) => {
+    const id = req.params.id;
+    const objectId = new ObjectId(id);
+    const filtro = { _id: objectId }; // Objeto de filtro para encontrar el documento por su _id
+    const actualizacion = { $set: req.body }; // Objeto de actualización con los datos a cambiar
+    mongoDB.conexionDB()
+    .then((conexion) => {
+        const controlador = conexion.db().collection('estudiantes');
+        
+        // Utilizar el operador de igualdad para buscar estudiantes con el _id específico
+        controlador.updateOne(filtro, actualizacion)
+        .then(respuesta.send('Registro Actualizado'))
+        .catch((error) => respuesta.send(error));
+    })
+});
+
+//Eliminar un registro
+//http://localhost:3000/estudiantes/delete/Juan perez
+app.delete('/estudiantes/delete/:nombre', (req, res ) => {
+    const nombre = req.params.nombre;
+    mongoDB.conexionDB()
+    .then((conexion) =>{
+        const controlador = conexion.db().collection('estudiantes');
+        controlador.deleteOne({nombre: nombre})
+        .then((resultado) => {
+            if(resultado.deletedCount === 1){
+                res.send('Registro eliminado')
+            }else{
+                res.send('No se encontro el registro con es nombre')
+            }
+        })
+        .catch((error) => res.send(error));
+    });
+});
 
 
 
