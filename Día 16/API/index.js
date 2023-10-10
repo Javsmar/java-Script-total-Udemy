@@ -43,7 +43,7 @@ app.post('/clientes/create', (pedido, respuesta) => {
 }) 
 
 app.delete('/clientes/delete/:nombre', (pedido, respuesta) => {
-    const nombre = pedido.params.nombre; // Obtén el ID del parámetro de la URL
+    const nombre = pedido.params.nombre; // Obtén el nombre del parámetro de la URL
     mongoDB.conexionDB()
     .then((conexion) => {
         const controlador = conexion.db().collection('clientes');

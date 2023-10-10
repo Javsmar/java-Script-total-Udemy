@@ -1,10 +1,14 @@
 // configurar la conexión para nuestra base de datos en mongdb
+// MongoClient es una parte fundamental de la interacción de una aplicación Node.js 
+// con una base de datos MongoDB, permitiendo la gestión de datos de manera eficiente
+//  en aplicaciones web, móviles y otros tipos de aplicaciones.
 const { MongoClient } = require('mongodb');
 
 // Crea una nueva instancia de MongoClient y especifica la URL de conexión a la base de datos
 const client = new MongoClient('mongodb://127.0.0.1:27017/mibase');
 
-// Desarrollar una función anónima para conectarnos con la base de datos y retornar el objeto que tiene la conexión
+// Desarrollar una función anónima para conectarnos con la base de datos y retornar el objeto 
+//que tiene la conexión
 const conexionDB = () => {
     // Utiliza el método connect de MongoClient para establecer la conexión a la base de datos
     return client.connect()
